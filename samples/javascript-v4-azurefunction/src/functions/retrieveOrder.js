@@ -5,7 +5,7 @@ const daprStateInput = input.generic({
     stateStore: "%StateStoreName%",
     direction: "in",
     name: "order",
-    key: "order"
+    key: "{key}"
 });
 
 app.generic('RetrieveOrder', {

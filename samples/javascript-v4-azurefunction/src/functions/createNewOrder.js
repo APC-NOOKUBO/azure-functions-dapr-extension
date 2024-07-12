@@ -5,7 +5,7 @@ const daprStateOuput = output.generic({
     stateStore: "%StateStoreName%",
     direction: "out",
     name: "order",
-    key: "order"
+    route: "state/{key}"
 });
 
 app.generic('CreateNewOrder', {
@@ -18,6 +18,6 @@ app.generic('CreateNewOrder', {
         context.log("Node function processed a CreateNewOrder request from the Dapr Runtime.");
         context.log(context.triggerMetadata.payload.data)
 
-       return context.triggerMetadata.payload.data;
+        return context.triggerMetadata.payload.data;
     }
 });
